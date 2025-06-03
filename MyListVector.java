@@ -79,7 +79,14 @@ public class MyListVector extends MyAbstractVector {
 
     @Override
     public MyListVector remove(int index) {
-        /* TODO */
+        if (index < 0 || index >= data.size()){
+
+            throw new IndexOutOfBoundsException("Vượt quá rồi bạn ơi !");
+            
+        }
+
+        data.remove(index);
+        return this;
     }
 
     @Override

@@ -84,7 +84,20 @@ public class MyArrayVector extends MyAbstractVector {
 
     @Override
     public MyArrayVector remove(int index) {
-        /* TODO */
+        if (index < 0 || index >= size){
+
+            throw new IndexOutOfBoundsException("Vượt quá phạm vi mảng");
+
+        }
+
+
+        for (int i = index; i < size - 1; i++){
+            data[i] = data[i + 1];
+        }
+
+        size--;
+
+        return this;
     }
 
     @Override
@@ -280,7 +293,7 @@ public class MyArrayVector extends MyAbstractVector {
 
         for(int i = 0; i < size; i++){
             double x = data[i];
-            
+
             ans += x*x;
 
         }
