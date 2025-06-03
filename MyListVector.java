@@ -95,7 +95,7 @@ public class MyListVector extends MyAbstractVector {
             throw new IndexOutOfBoundsException("Vượt quá rồi bạn ơi !");
         }
 
-        data[index] = value;
+        data.set(index, value);
     }
 
     @Override
@@ -138,7 +138,7 @@ public class MyListVector extends MyAbstractVector {
 
         for (int i = 0; i < data.size(); i++){
 
-            data.set(i, data.get(i) + value);
+            this.set(data.get(i) + value, i);
 
         }
 
@@ -154,7 +154,7 @@ public class MyListVector extends MyAbstractVector {
 
         for (int i = 0; i < data.size(); i++){
 
-            data.set(i, data.get(i) + another.coordinate(i));
+            this.set(data.get(i) + another.coordinate(i), i);
 
         }
 
@@ -198,7 +198,7 @@ public class MyListVector extends MyAbstractVector {
 
         for (int i = 0; i < this.data.size(); i++){
 
-            this.data.set(i, this.data.get(i) - value);
+            this.set(this.data.get(i) - value, i);
 
         }
         return this;
@@ -216,7 +216,7 @@ public class MyListVector extends MyAbstractVector {
 
         for (int i = 0; i < this.data.size(); i++){
 
-            this.data.set(i, this.data.get(i) - another.coordinate(i));
+            this.set(this.data.get(i) - another.coordinate(i), i);
 
         }
 
@@ -251,7 +251,7 @@ public class MyListVector extends MyAbstractVector {
 
         for (int i = 0; i < data.size(); i++){
 
-            data.set(i, Math.pow(data.get(i), power));
+            this.set(Math.pow(data.get(i), power), i);
 
         }
 
@@ -263,7 +263,7 @@ public class MyListVector extends MyAbstractVector {
 
         for (int i = 0; i < data.size(); i++){
 
-            data.set(i, data.get(i) * value);
+            this.set(data.get(i) * value, i);
 
         }
 
